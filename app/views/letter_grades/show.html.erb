@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Grade:</strong>
+  <%= @letter_grade.grade %>
+</p>
+
+<p>
+  <strong>Min points:</strong>
+  <%= @letter_grade.min_points %>
+</p>
+
+<p>
+  <strong>Max points:</strong>
+  <%= @letter_grade.max_points %>
+</p>
+
+<%= link_to 'Edit', edit_letter_grade_path(@letter_grade) %> |
+<%= link_to 'Back', letter_grades_path %>

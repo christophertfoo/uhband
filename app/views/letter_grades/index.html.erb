@@ -1,0 +1,31 @@
+<h1>Listing letter_grades</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Grade</th>
+      <th>Min points</th>
+      <th>Max points</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @letter_grades.each do |letter_grade| %>
+      <tr>
+        <td><%= letter_grade.grade %></td>
+        <td><%= letter_grade.min_points %></td>
+        <td><%= letter_grade.max_points %></td>
+        <td><%= link_to 'Show', letter_grade %></td>
+        <td><%= link_to 'Edit', edit_letter_grade_path(letter_grade) %></td>
+        <td><%= link_to 'Destroy', letter_grade, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Letter grade', new_letter_grade_path %>
