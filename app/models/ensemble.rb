@@ -8,5 +8,5 @@ class Ensemble < ActiveRecord::Base
   
   # Validations
   validates :name, presence: true
-  validates :year, presence: true
+  validates :semester, presence: true
 end

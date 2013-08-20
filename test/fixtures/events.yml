@@ -1,9 +1,0 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
-
-one:
-  name: MyString
-  time: 2013-08-18 20:14:51
-
-two:
-  name: MyString
-  time: 2013-08-18 20:14:51

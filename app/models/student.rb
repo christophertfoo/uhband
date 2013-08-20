@@ -13,6 +13,6 @@ class Student < ActiveRecord::Base
   has_many :superiors , class_name: 'Permission', foreign_key: 'subordinate_id'
   
   # Validations
-  validates :first_name, required: true
-  validates :last_name, required: true
+  validates :first_name, presence: true
+  validates :last_name, presence: true
 end
