@@ -5,6 +5,6 @@ class Event < ActiveRecord::Base
   
   # Validations
   validates :name, presence: true
-  validates :date, presence: true
+  validates :time, presence: true
   validates :event_type_id, presence: true  
 end

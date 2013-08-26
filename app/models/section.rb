@@ -6,5 +6,6 @@ class Section < ActiveRecord::Base
   has_many :students, through: :memberships
   
   # Validations
-  validates :name, required: true
+  validates :name, presence: true
+  validates :ensemble_id, presence: true
 end

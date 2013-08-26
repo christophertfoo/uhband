@@ -15,4 +15,5 @@ class Student < ActiveRecord::Base
   # Validations
   validates :first_name, presence: true
   validates :last_name, presence: true
+  validates :id_num, numericality: { only_integer: true, greater_than: 0 }, allow_nil: true
 end

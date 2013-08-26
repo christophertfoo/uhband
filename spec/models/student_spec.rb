@@ -8,6 +8,7 @@ describe 'Student' do
   describe "members" do
     it { should respond_to :first_name }
     it { should respond_to :last_name }
+    it { should respond_to :id_num }
 
     it { should respond_to :memberships }
     it { should respond_to :sections }
@@ -31,6 +32,26 @@ describe 'Student' do
     context "last_name not present" do
       before { student.last_name = " " }
       it { should_not be_valid }
+    end
+    
+    context "non-numeric id number" do
+      before { student.id_num = "not a number" }
+      it { should_not be_valid }
+    end
+    
+    context "negative id number" do
+      before { student.id_num = "-1" }
+      it { should_not be_valid }
+    end
+    
+    context "zero id number" do
+      before { student.id_num = "0" }
+      it { should_not be_valid }
+    end
+    
+    context "missing id number" do
+      before { student.id_num = nil }
+      it { should be_valid }
     end
   end
 end
