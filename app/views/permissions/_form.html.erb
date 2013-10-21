@@ -4,22 +4,25 @@
       <h2><%= pluralize(@permission.errors.count, "error") %> prohibited this permission from being saved:</h2>
 
       <ul>
-      <% @permission.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
+        <% @permission.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
-
   <div class="field">
-    <%= f.label :read %><br>
-    <%= f.check_box :read %>
+    <%= f.label(:superior_id, 'Give permission to:') %>
+    <%= collection_select(:permission, :superior_id, Student.all, :id, :full_name) %>
   </div>
   <div class="field">
-    <%= f.label :edit %><br>
+    <%= f.label(:superior_id, 'To view:') %>
+    <%= collection_select(:permission, :subordinate_id, Student.all, :id, :full_name) %>
+  </div>
+  <div class="field">    
     <%= f.check_box :edit %>
+    <%= f.label :edit, 'Can Edit?', class: 'checkbox inline' %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: 'btn btn-primary' %>
   </div>
 <% end %>
